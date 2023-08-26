@@ -1,53 +1,18 @@
 /**
- * @name Ultra Invisible Background
+ * @name TranslucencePlus Invisible Background
  * @version 1.0.0
- * @description Ultra theme with an invisible main background
- * @source https://github.com/TheCommieAxolotl/BetterDiscord-Stuff/tree/main/Ultra
+ * @description TranslucencePlus theme with an invisible main background
+ * @source https://github.com/the-source-url
  */
 
-/* Reset default styles */
-body, html {
-    margin: 0;
-    padding: 0;
-}
-
 /* Set invisible main background */
-:root,
-.theme-dark {
-    --background-primary: transparent !important;
-    --background-secondary: transparent !important;
-    --background-secondary-alt: transparent !important;
-    --background-tertiary: transparent !important;
-    --background-accent: transparent !important;
-    --background-floating: transparent !important;
-    --modal-background: transparent !important;
-    --channeltextarea-background: transparent !important;
-    --background-primary: transparent !important; /* Set main background to transparent */
+:root {
+    --app-bg: transparent !important;
 }
 
-/* Define text and interactive colors */
-:root,
-.theme-dark {
-    --text-normal: #dcddde;
-    --text-muted: #4a4a52;
-    --text-link: #6e6af6;
-    --text-positive: #50dc7d;
-    --text-warning: #8d4949;
-    --text-danger: #8d4949;
-    --text-brand: #6e6af6;
-    --interactive-normal: #b9bbbe;
-    --interactive-hover: #dcddde;
-    --interactive-active: #c9ced0;
-    --interactive-muted: #4f545c;
-}
+/* Define other styles from the original theme */
+/* ... (You can paste the rest of the styles here) ... */
 
 /* Additional styling options can be added here */
 
-/* Fonts */
-:root,
-.theme-dark {
-    --font: "Lato";
-    --code-font: "Source Code Pro";
-}
-
-/* Made By The Commie Axolotl */
+/* Made By the original author */
