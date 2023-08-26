@@ -1,117 +1,121 @@
-/**
- * @name TranslucencePlus
- * @version 1.3
- * @description A translucent/frosted glass Discord theme
- * @author MeowIce
- *
- * @invite jzJkA6Z
- */
+//META{"name":"Full Transparency","description":"A theme designed specifically for using the transparency option in BetterDiscord, with extra features/animations. Use together with FullTransparency plugin.(Not required)<br><br> *Fully close discord and reopen when first turning on transparency option. Ctrl + R does not work.<br>- Please use the support server listed below if you need any help.","author":"Satoru","version":"1.4.4","website":"http://discord.gg/fjvwb95"}*//{}
 
-@import url(https://capnkitten.github.io/BetterDiscord/Themes/Translucence/css/source.css);
+@import url('https://satoru8.github.io/FullTransparency/FullTransparency.css'); /* Main theme, do not touch. */
 
+/* Addons start here. If you dont like an addon, remove the import */
+@import url('https://satoru8.github.io/Addons/FullScreenServerSettingsMenu/fullScreenServerSettingsMenu.css');
+@import url('https://satoru8.github.io/Addons/FullScreenStatusPicker/fullScreenStatusPicker.css');
+@import url('https://satoru8.github.io/Addons/Compact/Settings/CompactSettings.css');
+@import url('https://satoru8.github.io/Addons/OldUserSettings/oldUserSettings.css');
+@import url('https://satoru8.github.io/Addons/CodeBlock/CodeBlocks.css');
+@import url('https://satoru8.github.io/FullSizePfp/FullSizePfp.css');
+@import url('https://satoru8.github.io/Addons/FriendsList.css');
+@import url('https://satoru8.github.io/Addons/GlowStatus.css');
+@import url('https://satoru8.github.io/Addons/Library.css');
+
+/*
+User Customizable Theme Settings.
+
+There is a lot of settings. 
+I suggest you take your time to review them all. 
+
+*/
 :root {
-	--app-bg: url(https://media.discordapp.net/attachments/834266925482639382/1056967035566948462/wp6333916-anime-aesthetic-night-wallpapers.jpg);
-	--app-blur: 6px;
-	--app-margin: 0px;
-	--app-radius: 8px; /*	-	*/
-	
-	--accent-hue: 192;
-	--accent-saturation: 72.3%;
-	--accent-lightness: 68.8%;
-	--accent-opacity: 1;
-	--accent-text-color: #000; /*	-	*/
 
-	--sidebar-color: rgba(0,0,0,0.4);
-	--main-content-color: rgba(0,0,0,0.2); /*	-	*/
+    --brightness: rgba(0, 0, 0, 0.8) ;/* Main theme brightness / background colour */
+    --bgLayer: rgba(0, 0, 0, 0.0) ;/* Adds a layer for use with wallpapers. Adjust the 4th number(alpha) for brightness. 1 = black, 0 = transparent */ 
+    --settings: rgba(0, 0, 0, 0.8) ;/* Settings menu transparency */
 
-	--message-color: rgba(0,0,0,0);
-	--message-radius: 8px;
-	--message-padding-top: 0px;
-	--message-padding-side: 6px; /*	-	*/
-	
-	--reply-hue: 226;
-	--reply-saturation: 77.4%;
-	--reply-lightness: 61.8%;
-	--reply-opacity: 1; /*	-	*/
+    --homeIcon: url('https://i.imgur.com/yA3h4mo.png');
 
-	--textarea-color: 255,255,255;
-	--textarea-alpha: 0.1;
-	--textarea-alpha-focus: 0.15;
-	--textarea-text-color: #fff;
-	--textarea-radius: 22px;  /*	-	*/
+    --bgBlur: 0px;/* Optional blur effect for secondary wallpaper. */
+--bgOpacity:0.6;/* Opacity on the secondary wallpaper. */
 
-	--card-color: rgba(0,0,0,0.4);
-	--card-color-hover: rgba(0,0,0,0.5);
-	--card-color-select: rgba(0,0,0,0.7); /*	-	*/
-	
-	--button-height: 32px;
-	--button-padding: 0 16px;
-	--button-action-color: #000;
-	--button-radius: 16px; /*	-	*/
+--winRad: 4px;/* Discord window radius/roundness */
 
-	--interactive-normal: #aaa;
-	--interactive-hover: #ddd;
-	--interactive-active: #fff;
-	--interactive-muted: #777; /*	-	*/
+    --accent: rgba(175, 0, 175, 0.7) ;/* Main theme accent colours */
+    --border: rgba(175, 0, 175, 0.7);/* Border Colours */
+    --gSelect:rgba(0, 255, 245, 0.7);/* Currently selected guild colour. 5px 2px Default */ 
+    --unread: rgba(255, 25, 25, 0.9) ;/* Unread messages colour */
+--sb:   rgba(178, 0, 195, 0.2) ;/* Scrollbars. */
 
-	--background-modifier-hover: rgba(255,255,255,0.075);
-	--background-modifier-selected: rgba(255,255,255,0.125);
-	--font-primary: "SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif !important;
-  --font-display: "SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif !important;
-}
-.homeIcon-r0w4ny {
-    display: none;
-}
-.tutorialContainer-1pL9QS .wrapper-3kah-n .childWrapper-1j_1ub:before {
-    position: absolute;
-    content: " ";
-    width: 48px;
-    height: 48px;
-    background-image: url(https://media.discordapp.net/attachments/1019856019419050074/1056207071428751451/meowIce.png);
-    background-size: contain;
-    border-radius: 40%;
-}
-.reaction-3vwAF2, .reaction-102jx9 {
-  background-color: rgba(0,0,0,0.2);
-  border-radius: var(--message-radius);
-  border: none;
-}
-.wrapper-30-Nkg:not(.groupStart-3Mlgv1), .wrapper-30-Nkg.compact-2Nkcau {
-    margin-top: 0;
-}
-.repliedMessage-3Z6XBG {
-  margin-right: 10px;
-}
-.repliedMessage-3Z6XBG:before {
-  transform: translateY(0px);
-}
-.repliedMessage-3Z6XBG .replyAvatar-sHd2sU,
-.repliedMessage-3Z6XBG .replyBadge-LMm_Ic,
-.repliedMessage-3Z6XBG .executedCommandAvatar-3oOnb1 {
-  margin-left: 0px;
-}
-.hasReply-2Cr4KE .avatar-2e8lTP {
-	margin-top: 20px;
-}
-.embedFull-1HGV2S,
-[class*=theme-] .invite-3uuHYQ,
-[class*=theme-] .wrapperAudio-1Bzv_Z,
-.wrapper-1HIH0j,
-.attachment-1PZZB2,
-[class*=theme-] .tile-2mmK5T,
-[class*=theme-] .tile-2mmK5T:hover {
-    background-color:rgba(39, 39, 39, 0.4);
-    border-radius: 6px;
-}
-.mentioned-Tre-dv {
-    --message-color: hsla(var(--mention-hsl),0.2);
-}
-.mentioned-Tre-dv,
-.replying-eZ7p5z {
-    border-radius: var(--app-radius);
+    --round: 50%; /* 0% Square, 50% Circle Pfps/Guilds*/
+
+    --font: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif ;/* Discord default font - Whitney,Helvetica Neue,Helvetica,Arial,sans-serif */
+    --fontSize: 14px;
+    --textColour: #fff;/* Chat text colour */
+
+    --profileRadius: 5px;/* User popout profiles. 0 is normal squared edges. Up to 50px for rounded profiles. */
+    --rolesRadius: 6px;      /* Roles roundness */
+--color: #fff;/* PFP Name colour */
+
+/* Old/Compact User Settings */
+    --sWidth2: 70% ; /* Settings Width */
+    --sHeight2: 90% ; /* Settings Height */
+    
+    --sBackground: rgba(40, 40, 40, 0.9) ;  /* Overall Main Settings Background */ 
+    --sBackgroundRight: transparent ;   /* Right side settings Colour - Set to transparent to use 'sBackground' setting. */
+    --sBackgroundLeft: transparent ;    /* Left side settings Colour - Set to transparent to use 'sBackground' setting. */
+
+    --sBackdrop2: rgba(0, 0, 0, 0.3) ; /* Settings Backdrop transparency/colour */
+    --sRadius2: 6px ;   /* Settings Border Radius(Roundness) */
+
+    --blurSpeed: 200ms ; /* Email Blur Speed */
+    --blurOpacity: 0.8 ; /* Email Blur Opacity */
+
+/* CodeBlocks */
+--cbBG: rgba(0, 0, 0, 0.2);/* Main background colour */
+--mainColour:#073642cc;/* Main line colour */
+--slColour: #002b36cc;/* Secondary line colour */
+
+/* GlowStatus */
+    --sGlow: 5px 2px;/* Blur/Thickness Default: 5px 2px */
+
+    --online: #00ff8b;/* Status Colours */
+    --offline: #747f8d;
+    --idle: #faa61a;
+    --stream: #593695;
+    --dnd: #f04747;
+    --invis: #1a36fa;
+
+/* Uri's FullScreen Status */
+    --sPickerOnlineBGColour: #43b581;
+    --sPickerIdleBGColour: #faa61a;
+    --sPickerDNDBGColour: #f04747;
+    --sPickerInviBGColour: #1a36fa;
+
+    --sPickerOnlineBGIcon: url('https://satoru8.github.io/Addons/FullScreenStatusPicker/Assets/online.svg');
+    --sPickerIdleBGIcon: url('https://satoru8.github.io/Addons/FullScreenStatusPicker/Assets/idle.svg');
+    --sPickerDNDBGIcon:url('https://satoru8.github.io/Addons/FullScreenStatusPicker/Assets/dnd.svg');
+    --sPickerInviBGIcon: url('https://satoru8.github.io/Addons/FullScreenStatusPicker/Assets/invis.svg');
+
+/* Uri's ServerSettings Menu*/
+    --ssColourInvite: #7289da;
+--ssColourServerSettings: #046d94;
+--ssColourCreateChannel: #daa520;
+--ssColourCreateCategory: #751e5f;
+--ssColourNotification: #157563;
+--ssColourPrivacy: #497388;
+--ssColourNickname: #714484;
+--ssColourHidden: #cc6699;
+--ssColourLeave: #f04747;
+
+--ssIconInvite: url('https://satoru8.github.io/Addons/FullScreenServerSettingsMenu/Assets/invite.svg');
+--ssIconServerSettings: url('https://satoru8.github.io/Addons/FullScreenServerSettingsMenu/Assets/setting.svg');
+--ssIconCreateChannel: url('https://satoru8.github.io/Addons/FullScreenServerSettingsMenu/Assets/channel.svg');
+--ssIconCreateCategory: url('https://satoru8.github.io/Addons/FullScreenServerSettingsMenu/Assets/category.svg');
+--ssIconNotification: url('https://satoru8.github.io/Addons/FullScreenServerSettingsMenu/Assets/notif.svg');
+--ssIconPrivacy: url('https://satoru8.github.io/Addons/FullScreenServerSettingsMenu/Assets/privacy.svg');
+--ssIconNickname: url('https://satoru8.github.io/Addons/FullScreenServerSettingsMenu/Assets/nickname.svg');
+--ssIconHiddenIsHidden: url('https://satoru8.github.io/Addons/FullScreenServerSettingsMenu/Assets/hidden.svg');
+--ssIconHiddenIsShown: url('https://satoru8.github.io/Addons/FullScreenServerSettingsMenu/Assets/shown.svg');
+--ssIconLeave: url('https://satoru8.github.io/Addons/FullScreenServerSettingsMenu/Assets/leave.svg');
 }
 
-.mentioned-Tre-dv:before,
-.replying-eZ7p5z:before {
-    display: block;
-}
+/* Main wallpaper. */
+#app-mount {background-image: url(''); background-position: center;background-size: cover;background-repeat: no-repeat}
+
+ /* Optional secondary wallpaper. For use with opacity setting. */
+#app-mount::before {background-image: url(''); background-position: center;background-size: cover;background-repeat: no-repeat}
+
+/* Custom CSS */
