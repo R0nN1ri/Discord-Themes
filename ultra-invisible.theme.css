@@ -1,7 +1,7 @@
 /**
  * @name Ultra Invisible Background
  * @version 1.0.0
- * @description Ultra theme with an invisible background
+ * @description Ultra theme with an invisible main background
  * @source https://github.com/TheCommieAxolotl/BetterDiscord-Stuff/tree/main/Ultra
  */
 
@@ -11,7 +11,7 @@ body, html {
     padding: 0;
 }
 
-/* Set invisible background */
+/* Set invisible main background */
 :root,
 .theme-dark {
     --background-primary: transparent !important;
@@ -22,6 +22,7 @@ body, html {
     --background-floating: transparent !important;
     --modal-background: transparent !important;
     --channeltextarea-background: transparent !important;
+    --background-primary: transparent !important; /* Set main background to transparent */
 }
 
 /* Define text and interactive colors */
